@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "faelight-theme"
+version = "0.1.0"
+description = "Generate beautiful themes from wallpapers"
+authors = [
+    {name = "Christian"}
+]
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+
+dependencies = [
+    "click>=8.0",
+    "Pillow>=10.0",
+    "jinja2>=3.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+]
+
+[project.scripts]
+faelight-theme = "faelight_theme.cli:cli"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["faelight_theme*"]
